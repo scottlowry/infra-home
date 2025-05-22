@@ -1,0 +1,5 @@
+@reboot /root/scripts/btc_usb.sh
+*/15 * * * * /root/scripts/transmission.sh
+0 1 * * * /root/scripts/update.sh
+0 2 * * * /root/scripts/ssl_no_idrac.sh
+0 3 * * * /root/scripts/backup.sh
