@@ -15,6 +15,11 @@ Located in `proxmox/scripts/`, these scripts handle various automated tasks:
 - `transmission.sh` - Transmission torrent client management
 - `update.sh` - System update automation
 
+### Raspberry Pi Scripts
+
+Located in `raspberry-pi/scripts/`
+- `argon1v1.sh` - Fan and power button control daemon for Argon One Raspberry Pi 3B+ case
+
 ### Automated Tasks
 
 The `proxmox/crontab` file defines the following scheduled tasks:
