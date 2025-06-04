@@ -1,4 +1,4 @@
-# Infra Home
+# Home Infra
 
 This repository contains automation scripts and configuration for managing my Proxmox-based home infrastructure setup.
 
