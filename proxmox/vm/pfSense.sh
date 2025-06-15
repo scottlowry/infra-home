@@ -11,6 +11,7 @@ qm create $ID \
   --memory 4096 \
   --cores 4 \
   --sockets 1 \
+  --cpu host \
   --net0 virtio=${WAN_MAC},bridge=vmbr0 \
   --net1 virtio=${LAN_MAC},bridge=vmbr1 \
   --scsihw virtio-scsi-single \
@@ -22,6 +23,7 @@ qm create $ID \
   --bootdisk scsi0 \
   --boot order=ide2;scsi0 \
   --onboot 1 \
-  --startup order=1
+  --startup order=1,up=60 \
+  --agent 1
 
 # qm start $ID

@@ -10,15 +10,18 @@ qm create $ID \
   --memory 1024 \
   --cores 4 \
   --sockets 1 \
+  --cpu host \
+  --numa 0 \
+  --ostype l26 \
   --net0 virtio=${MAC},bridge=vmbr1,firewall=1,tag=1 \
   --scsihw virtio-scsi-single \
   --scsi0 local-zfs:4G,discard=on,iothread=1,ssd=1 \
   --bios seabios \
   --machine i440fx \
-  --ostype other \
   --ide2 RAID:iso/${ISO},media=cdrom \
   --bootdisk scsi0 \
   --boot order=ide2;scsi0 \
   --onboot 1 \
+  --agent 1
 
 # qm start $ID
