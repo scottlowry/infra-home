@@ -1,0 +1,13 @@
+- name: Run apt update and upgrade
+  hosts: all
+  tasks:
+    - name: Update APT cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
+        autoremove: no
+        autoclean: yes

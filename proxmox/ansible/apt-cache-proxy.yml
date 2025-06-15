@@ -1,0 +1,12 @@
+- name: Configure APT cache proxy
+  hosts: all
+  tasks:
+    - name: Set APT cache proxy config
+      copy:
+        dest: /etc/apt/apt.conf.d/00aptproxy
+        content: |
+          Acquire::http::Proxy "http://acng.lan.scottlowry.net:3142";
+          Acquire::https::Proxy "DIRECT";
+        owner: root
+        group: root
+        mode: '0644'

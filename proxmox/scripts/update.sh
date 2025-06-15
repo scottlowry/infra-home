@@ -27,8 +27,5 @@ done
 # Update Pi-hole
 pct exec 101 -- bash -lc "pihole -up"
 
-# Update cloudflared
-pct exec 103 -- bash -lc "rm /etc/systemd/system/cloudflared* && curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && dpkg -i cloudflared.deb && cloudflared service install $TUNNEL_ID"
-
 # Update host
 apt-get -qq update && apt-get upgrade -y
