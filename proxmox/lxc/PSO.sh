@@ -1,9 +1,9 @@
 #!/bin/bash
 
-ID=102
-NAME="Unifi"
-IP="10.0.0.200"
-MAC="5E:47:4E:51:BA:F9"
+ID=109
+NAME="PSO"
+IP="10.0.0.153"
+MAC="BC:24:11:45:51:3F"
 
 pct create $ID RAID:vztmpl/debian-12-standard_*.tar.zst \
   --arch amd64 \
@@ -16,8 +16,7 @@ pct create $ID RAID:vztmpl/debian-12-standard_*.tar.zst \
   --net0 name=eth0,bridge=vmbr1,firewall=1,gw=10.0.0.1,hwaddr=${MAC},ip=${IP}/24,tag=1,type=veth \
   --rootfs local-zfs:2G \
   --ostype debian \
-  --onboot 1 \
-  --startup order=2
+  --onboot 0 \
 
 pct start $ID
 
